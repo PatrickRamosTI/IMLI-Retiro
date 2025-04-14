@@ -1,5 +1,6 @@
 package com.imli.Retiro.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.imli.Retiro.enums.Cargo;
 
 import jakarta.persistence.Column;
@@ -31,7 +32,8 @@ public class Usuario {
     @Email
     @Column(unique = true)
     private String email;
-
+    
+    @JsonIgnore
     @NotBlank
     private String senha;
 
