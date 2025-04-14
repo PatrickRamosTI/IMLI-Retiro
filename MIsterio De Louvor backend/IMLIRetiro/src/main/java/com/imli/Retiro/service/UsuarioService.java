@@ -2,9 +2,12 @@ package com.imli.Retiro.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.imli.Retiro.entity.Usuario;
 import com.imli.Retiro.repository.UsuarioRepository;
 
+@Service
 public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
     public UsuarioService(UsuarioRepository usuarioRepository){
@@ -16,7 +19,7 @@ public class UsuarioService {
     public List<Usuario>listarUsuarios(){
         return usuarioRepository.findAll();
     }
-    public Usuario buscarUsuarioId( Long id){
+    public Usuario buscarUsuarioPorId( Long id){
         return usuarioRepository.findById(id).orElse(null);
     }
 }
